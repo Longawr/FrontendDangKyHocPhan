@@ -1,0 +1,28 @@
+#forgot-label {
+    -fx-text-fill: #FDF6EC;
+}
+
+#forgot-label:hover {
+    -fx-text-fill: #F3E9DD;
+}
+
+.login-input {
+    -fx-background-color: transparent;
+    -fx-border-color: #B7CADB;
+    -fx-border-width: 0 0 2px 0;
+}
+
+.login-input:focused {
+    -fx-border-color: #F3E9DD;
+    -fx-border-width: 0 0 2px 0;
+
+}
+
+#btnLogin {
+    -fx-background-color: #30AADD;
+}
+
+#btnLogin:hover {
+    -fx-text-fill: #F3E9DD;
+    -fx-background-color: #B7CADB;
+}

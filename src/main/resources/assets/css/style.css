@@ -1,0 +1,102 @@
+.title-bar {
+    -fx-background-color: #FDF6EC;
+    -fx-border-color: #eee;
+    -fx-border-width: 0 0 0 0;
+}
+
+.title-bar .title {
+    -fx-text-fill: #B7CADB;
+}
+
+.button {
+    -fx-text-fill: #F7CCAC;
+    -fx-background-color: #30AADD;
+}
+
+.button:hover {
+    -fx-text-fill: #F3E9DD;
+    -fx-background-color: #B7CADB;
+}
+
+.logout {
+    -fx-text-fill: #B7CADB;
+}
+
+.logout:hover {
+    -fx-text-fill: #30AADD;
+}
+
+.table-view {
+    -fx-font-family: Tahoma;
+    -fx-border-width: 0px;
+    -fx-border-color: #000;
+    -fx-font-size: 15px;
+}
+#course-table {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+.table-row-cell:selected {
+    -fx-background-color: #1F81D7;
+}
+
+.table-view .column-header {
+    -fx-background-color: #30AADD;
+    -fx-border-width: 0 1px 1px 0;
+    -fx-border-color: #F7CCAC;
+    -fx-font-size: 15px;
+}
+#course-table .column-header .label{
+    -fx-font-size: 13px;
+}
+.scroll-pane {
+    -fx-background: #FFFFFF;
+    -fx-border-width: 0;
+    -fx-border-color: #FFF;
+}
+
+.current-semester, .current-class {
+    -fx-font-family: Tahoma;
+    -fx-font-size: 18px;
+    -fx-text-fill: #B7CADB;
+    -fx-font-weight: bold;
+}
+
+#password-reset {
+    -fx-text-fill: #0d6895;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+
+#password-reset:hover {
+    -fx-text-fill: #1F81D7;
+}
+
+.table-column {
+    -fx-alignment: center;
+}
+.combo-box {
+    -fx-background-color: #FFF;
+    -fx-border-color: #CCC;
+    -fx-border-width: 1px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+}
+.non-editable {
+    -fx-background-color: transparent;
+}
+.attend-info {
+    -fx-font-family: Tahoma;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #666;
+}
+.tab {
+    -fx-background-color: #fff;
+}
+.detail {
+    -fx-font-family: Tahoma;
+    -fx-font-size: 15px;
+    -fx-text-fill: #0d6895;
+    -fx-font-weight: bold;
+}

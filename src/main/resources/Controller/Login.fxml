@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+            prefWidth="347.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="CourseRegistration.Controller.LoginController">
+    <left>
+        <AnchorPane prefHeight="600.0" prefWidth="347.0" style="-fx-background-color: #DAB88B;"
+                    BorderPane.alignment="CENTER">
+            <ImageView fitHeight="580.0" fitWidth="327.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true"
+                       preserveRatio="true">
+                <Image url="@../assets/img/logo.jfif"/>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="150.0" layoutY="530.0" text="_Cáo_"
+                   textFill="#F3E9DD">
+                <font>
+                    <Font name="Tahoma" size="20.0"/>
+                </font>
+            </Label>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="400.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+            <cursor>
+                <Cursor fx:constant="DEFAULT"/>
+            </cursor>
+            <TextField fx:id="userField" layoutX="67.0" layoutY="178.0" onKeyPressed="#submitKeyPressed"
+                       promptText="Username" styleClass="login-input">
+                <font>
+                    <Font name="Tahoma" size="18.0"/>
+                </font>
+                <opaqueInsets>
+                    <Insets/>
+                </opaqueInsets>
+            </TextField>
+            <PasswordField fx:id="passwordField" layoutX="67.0" layoutY="250.0" onKeyPressed="#submitKeyPressed"
+                           promptText="Password" styleClass="login-input">
+                <font>
+                    <Font name="Tahoma" size="18.0"/>
+                </font>
+            </PasswordField>
+            <Button fx:id="btnLogin" alignment="CENTER" contentDisplay="CENTER" layoutX="87.0" layoutY="334.0"
+                    mnemonicParsing="false" onMouseClicked="#onSubmit" prefWidth="170.0"
+                    stylesheets="@../assets/css/Login.css" text="Login" textAlignment="CENTER" textFill="#F7CCAC">
+                <font>
+                    <Font name="Tahoma" size="18.0"/>
+                </font>
+                <effect>
+                    <DropShadow color="#DAB88B" height="15.0" radius="7.0" width="15.0"/>
+                </effect>
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+            </Button>
+            <Label fx:id="warning" alignment="CENTER" contentDisplay="CENTER" layoutX="67.0" layoutY="301.0"
+                   text="Incorrrect login, please try again." textFill="RED" visible="false">
+                <font>
+                    <Font name="Tahoma" size="15.0"/>
+                </font>
+            </Label>
+            <Label layoutX="67.0" layoutY="116.0" text="Đăng nhập" textFill="#F3E9DD">
+                <font>
+                    <Font name="Tahoma Bold" size="24.0"/>
+                </font>
+            </Label>
+            <Label id="forgot-label" fx:id="forgotLink" alignment="CENTER" contentDisplay="CENTER" layoutX="100.0"
+                   layoutY="395.0" prefHeight="26.0" prefWidth="150.0" text="Quên mật khẩu?" textAlignment="CENTER"
+                   textFill="#DAB88B">
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+                <font>
+                    <Font name="Tahoma" size="16.0"/>
+                </font>
+            </Label>
+            <FontAwesomeIconView glyphName="CLOSE" layoutX="327.0" layoutY="20.0" onMouseClicked="#exit" size="16"
+                                 wrappingWidth="18.85714340209961">
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView glyphName="MINUS" layoutX="302.0" layoutY="20.0" onMouseClicked="#minimize"
+                                 size="16">
+                <cursor>
+                    <Cursor fx:constant="HAND"/>
+                </cursor>
+            </FontAwesomeIconView>
+        </AnchorPane>
+    </right>
+    <stylesheets>
+        <URL value="@../assets/css/style.css"/>
+        <URL value="@../assets/css/Login.css"/>
+    </stylesheets>
+</BorderPane>

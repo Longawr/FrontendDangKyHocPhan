@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+      prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="CourseRegistration.Controller.CourseDetailController">
+    <stylesheets>
+        <URL value="@../assets/css/style.css"/>
+    </stylesheets>
+    <AnchorPane prefHeight="30.0" prefWidth="600.0" styleClass="title-bar" stylesheets="@../assets/css/style.css">
+        <FontAwesomeIconView fill="#B7CADB" glyphName="CLOSE" layoutX="880.0" layoutY="21.0" onMouseClicked="#exit"
+                             size="16">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </FontAwesomeIconView>
+        <FontAwesomeIconView fill="#B7CADB" glyphName="MINUS" layoutX="854.0" layoutY="21.0"
+                             onMouseClicked="#minimize" size="16">
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </FontAwesomeIconView>
+        <Label layoutX="8.0" layoutY="6.0" text="__Quản lý Khóa học__" textFill="#B7CADB">
+            <font>
+                <Font name="Tahoma Bold" size="14.0"/>
+            </font>
+        </Label>
+    </AnchorPane>
+    <BorderPane prefHeight="570.0" prefWidth="900.0" style="-fx-background-color: #FDF6EC;">
+        <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" style="-fx-background-color: #DAB88B;"
+                  BorderPane.alignment="CENTER">
+                <padding>
+                    <Insets left="40.0" right="40.0" top="20.0"/>
+                </padding>
+                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="700.0">
+                    <Label prefHeight="21.0" prefWidth="537.0" text="DANH SÁCH SINH VIÊN ĐĂNG KÝ HỌC PHẦN"
+                           textFill="#666666">
+                        <font>
+                            <Font name="Tahoma Bold" size="16.0"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="detailLabel" textFill="#666666">
+                        <font>
+                            <Font name="Tahoma Bold" size="16.0"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="searchBar" onKeyTyped="#onSearch" prefHeight="40.0" prefWidth="451.0"
+                               promptText="Tìm sinh viên">
+                        <font>
+                            <Font name="Tahoma" size="17.0"/>
+                        </font>
+                    </TextField>
+                </HBox>
+                <TableView id="course-table" fx:id="table" prefHeight="402.0" prefWidth="820.0">
+                    <columns>
+                        <TableColumn fx:id="col_studentId" prefWidth="175.0" resizable="false"
+                                     styleClass="number-column">
+                            <graphic>
+                                <Label prefHeight="19.0" prefWidth="51.0" text="MÃ SV" textFill="WHITE">
+                                    <font>
+                                        <Font name="Tahoma Bold" size="15.0"/>
+                                    </font>
+                                </Label>
+                            </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="col_studentName" prefWidth="348.0" resizable="false">
+                            <graphic>
+                                <Label prefHeight="19.0" prefWidth="136.0" text="TÊN SINH VIÊN" textFill="WHITE">
+                                    <font>
+                                        <Font name="Tahoma Bold" size="15.0"/>
+                                    </font>
+                                </Label>
+                            </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="col_dateRegistered" prefWidth="295.0" resizable="false">
+                            <graphic>
+                                <Label prefHeight="16.0" prefWidth="198.0" text="THỜI GIAN ĐĂNG KÝ"
+                                       textFill="WHITE">
+                                    <font>
+                                        <Font name="Tahoma Bold" size="15.0"/>
+                                    </font>
+                                </Label>
+                            </graphic>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </VBox>
+        </center>
+        <top>
+            <AnchorPane prefHeight="73.0" prefWidth="900.0"
+                        style="-fx-border-color: #ccc; -fx-border-width: 0 0 1px 0; -fx-background-color: #FDF6EC;"
+                        BorderPane.alignment="CENTER">
+                <ImageView fitHeight="68.0" fitWidth="71.0" layoutX="29.0" layoutY="3.0"
+                           onMouseClicked="#onDashboard" pickOnBounds="true" preserveRatio="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                    <Image url="@../assets/img/SchoolLogo.png"/>
+                </ImageView>
+                <Label layoutX="122.0" layoutY="15.0" styleClass="detail" text="HỌC PHẦN: " textFill="#0d6895">
+                    <font>
+                        <Font name="Tahoma Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="courseInfo" layoutX="213.0" layoutY="15.0" styleClass="detail" textFill="#0d6895">
+                    <font>
+                        <Font name="Tahoma Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="122.0" layoutY="40.0" styleClass="detail" text="GV LÝ THUYẾT: " textFill="#0d6895">
+                    <font>
+                        <Font name="Tahoma Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="teacherInfo" layoutX="241.0" layoutY="40.0" styleClass="detail" textFill="#0d6895">
+                    <font>
+                        <Font name="Tahoma Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="791.0" layoutY="24.0" prefHeight="25.0" prefWidth="4.0" text="|" textFill="#837d7d">
+                    <font>
+                        <Font name="Tahoma Bold" size="15.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER_RIGHT" layoutX="671.0" layoutY="24.0" onMouseClicked="#onReturn"
+                       prefHeight="25.0" prefWidth="113.0" text="Quay lại" textFill="#837d7d" underline="true">
+                    <font>
+                        <Font name="Tahoma Bold" size="15.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Label>
+                <Label fx:id="logout" layoutX="804.0" layoutY="24.0" onMouseClicked="#logoutClicked"
+                       prefHeight="25.0" prefWidth="82.0" styleClass="logout" text="Đăng xuất" textFill="#837d7d"
+                       underline="true">
+                    <font>
+                        <Font name="Tahoma Bold" size="15.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Label>
+                <Label fx:id="curSemLabel" layoutX="321.0" layoutY="24.0" styleClass="current-semester"/>
+            </AnchorPane>
+        </top>
+    </BorderPane>
+</VBox>
